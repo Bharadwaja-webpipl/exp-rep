@@ -1,0 +1,61 @@
+.ProfileListBtns {
+    width: 100%;
+    padding: 0 1rem;
+
+    .btsList {
+        display: flex;
+        /* justify-content: center; */
+        user-select: none;
+        padding: 0.5rem 0;
+        /* height: 50px; */
+        max-width: 600px;
+        overflow-x: scroll;
+        margin: 0 auto;
+        scroll-padding-left: 10px;
+    }
+
+    .ProfileRotingBtns {
+        position: relative;
+        margin: 0 0.75rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        transform-origin: center;
+    }
+
+    .ProfileRotingBtns::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(to left, #FF88C1 0%, #ff0080 100%);
+        left: 0;
+        bottom: 0;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: all 0.5s ease;
+    }
+
+    .ProfileRotingBtns.active::after,
+    .ProfileRotingBtns:hover::after {
+        transform-origin: center;
+        transform: scaleX(1);
+    }
+
+    .btsList::-webkit-scrollbar {
+        background-color: transparent;
+        height: 4px;
+    }
+
+    .btsList::-webkit-scrollbar-track {
+        border-radius: 50px;
+    }
+
+    .btsList::-webkit-scrollbar-thumb {
+        background-color: #FF88C1;
+        border-radius: 25px;
+    }
+
+    .btsList::-webkit-scrollbar-thumb:hover {
+        background-color: #ff0080;
+    }
+}
